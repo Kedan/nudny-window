@@ -1,10 +1,9 @@
-#This readme is outdated. 
-Must write new one.
+# This readme is outdated. 
+Must write new one. Propablu some errors in code.
 
-# Nudny Baseline 
+# Nudny  Window
 
-This is baseline for future modules/application
-It is responsible for building, testing and code quality.
+This is window wrapper for several implementations i.e.: sfml, sdk, fltk.
 
 ## Bulding
 
