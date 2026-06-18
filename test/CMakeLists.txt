@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.23)
 
+
+
 add_executable(nudny_base_UT
 	src/nudny_base_test.cpp
 )
@@ -7,7 +9,7 @@ add_executable(nudny_base_UT
 target_include_directories(nudny_base_UT
 	PUBLIC	
 		${CMAKE_CURRENT_SOURCE_DIR}/${INC_DIR}
-		include
+		include	
 )
 
 target_link_libraries(
