@@ -8,7 +8,6 @@ cov/
 *.so
 MODULE.bazel.lock
 bazel-bin
-bazel-nudny-baseline
 bazel-out
 bazel-testlogs
 

@@ -11,7 +11,7 @@ if [[ "$PRESET" == "all" ]]; then
 	echo "TODO"
 else
 
-	echo "($LINER) Configure ($PRESET) ($LINER)"
+	echo "($LINER) Build $PRESET ($LINER)"
 	cmake --preset "$PRESET"
 	
 	echo "($LINER)  Build ($PRESET) ($LINER)"
@@ -20,10 +20,10 @@ else
 	echo "($LINER)  Unit Tests on ($PRESET) ($LINER)"
 	ctest --preset "$PRESET" -V
 	
-	if [[ "$PRESET" == "asan" ]]; then
-		echo "($LINER) Sanitizers ($LINER)"
-		valgrind --error-exitcode=1 ctest --preset "$PRESET"
-	fi
+   if [[ "$PRESET" == "asan" ]]; then
+   	echo "($LINER) Sanitizers ($LINER)"
+   	valgrind --error-exitcode=1 ctest --preset "$PRESET"
+   fi
 	
 	if [[ "$PRESET" == "valgrind" ]]; then
 		echo "($LINER) Valgrind Memcheck ($LINER)"
