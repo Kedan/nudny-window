@@ -1,5 +1,3 @@
-load("@rules_cc//cc:defs.bzl","cc_library")
-load("@rules_cc//cc:defs.bzl","cc_binary")
 
 cc_library(
 	name = "nudny-baseline",
@@ -12,7 +10,26 @@ cc_library(
 	includes = [
 		"include",
 	],
-	visibility = ["//visibility:public"],
+	visibility = [
+		"//visibility:public",
+	],
+)
+
+cc_test(
+	name = "nudny-baseline-test",
+	includes = ["test/include"],
+	srcs = glob([
+		"test/include/**/*.hpp",
+		"test/src/**/*.cpp"
+	]),
+	copts = [
+		"-Wall",
+		"-Wextra",
+	],
+	deps = [
+		":nudny-baseline",
+		"@googletest//:gtest_main",
+	],
 )
 
 cc_binary(

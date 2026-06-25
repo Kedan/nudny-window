@@ -15,3 +15,5 @@ build:ubsan --copt=-fsanitize=undefined
 build:ubsan --copt=-fno-omit-frame-pointer
 build:ubsan --linkopt=-fsanitize=undefined
 build:ubsan --symlink_prefix=build/ubsan/
+
+build:test --symlink_prefix=build/test/
