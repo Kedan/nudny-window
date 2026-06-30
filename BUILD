@@ -25,6 +25,7 @@ cc_test(
 	copts = [
 		"-Wall",
 		"-Wextra",
+		"-Wpedantic",
 	],
 	deps = [
 		":nudny-baseline",

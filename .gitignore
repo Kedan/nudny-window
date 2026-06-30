@@ -7,7 +7,6 @@ cov/
 *.a
 *.so
 MODULE.bazel.lock
-bazel-bin
-bazel-out
-bazel-testlogs
-
+bazel-*
+~external
+ext
