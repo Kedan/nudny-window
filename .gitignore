@@ -8,5 +8,5 @@ cov/
 *.so
 MODULE.bazel.lock
 bazel-*
-~external
+~*
 ext
