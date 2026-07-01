@@ -9,5 +9,7 @@ echo "==================================================="
 bazel run @hedron_compile_commands//:refresh_all
 run-clang-tidy \
 	-p . \
-	-j $(nproc)
+	src/base/*.cpp \
+	src/*.cpp
+
 
