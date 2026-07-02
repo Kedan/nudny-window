@@ -20,7 +20,7 @@ cc_test(
 	includes = ["test/include"],
 	srcs = glob([
 		"test/include/nudny_base_test.hpp",
-		"test/src/nudny_base_tesat.cpp"
+		"test/src/nudny_base_test.cpp"
 	]),
 	copts = [
 		"-Wall",
