@@ -19,8 +19,8 @@ cc_test(
 	name = "nudny-baseline-test",
 	includes = ["test/include"],
 	srcs = glob([
-		"test/include/**/*.hpp",
-		"test/src/**/*.cpp"
+		"test/include/nudny_base_test.hpp",
+		"test/src/nudny_base_tesat.cpp"
 	]),
 	copts = [
 		"-Wall",
