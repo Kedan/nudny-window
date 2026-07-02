@@ -1,3 +1,6 @@
+#This readme is outdated. 
+Must write new one.
+
 # Nudny Baseline 
 
 This is baseline for future modules/application
