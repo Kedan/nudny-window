@@ -6,62 +6,34 @@ Must write new one.
 This is baseline for future modules/application
 It is responsible for building, testing and code quality.
 
-## Features
-- cmake presets
-- gtest
-- asan
-- ubsan
-- valgrind
-- helgrind
-- coverage (line, branch)
+## Bulding
 
-## Requirements
-- nlohmann/json
+To build code use bazel commands:
 
-## Build
-./scripts directory contains .sh files, used to build code, generate coverage raports and clean workspace.
+`bazel build --config=<config_name> //:<target>`
 
-To build, use:
-- ./scripts/build.sh <preset_name>
-
-To clean, use:
-- ./scripts/clean.sh <preset_name>
-
-To clean, and remove build folder, use:
-- ./scripts/clean.sh <preset_name> -x
-
-To clean all: TO DO
-
-Available <preset_name>:
-- release
-- debug
-- asan
-- valgrind
-- helgrind
-- coverage
-
-## Run
-- ./build/release/nd
-- ./build/<preset_name>/nd
-
+where `<target>` usually is module name, i.e. `nudny-baselnie`. Available configs for build:
+```
+debug
+release
+asan
+ubsan
+coverage
+```
 ## Tests
-Depends on what preset you build, choose one:
-- ./scripts/build.sh debug
 
-## Debugging
-Address sanitizer:
-- ./scripts/build.sh asan
+Target for test is usually module name with `-test` suffix, i.e. 
+`bazel test --config=<config_name> //:nudny-baseline-test`
+Availabe configurations for test:
+```
+valgrind
+helgrind
+```  
 
-Memory leak check:
-- ./scripts/build.sh valgrind
+## Clang-Tidy
 
-Race conditioning test:
-- ./scripts/build.sh helgrind
-
-Coverage (line + branch):
-- ./scripts/build.sh coverage
-
-Coverage raports are generated in cov/ directory
+To use sstatic analisys run bash script in workspace directory:
+`scripts/clang-tidy.sh` 
 
 ## Project structure
 - ./include - main header files
