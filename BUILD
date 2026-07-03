@@ -13,6 +13,9 @@ cc_library(
 	visibility = [
 		"//visibility:public",
 	],
+	deps = [ 
+		"@nlohmann_json//:json",
+	],
 )
 
 cc_test(
@@ -30,11 +33,15 @@ cc_test(
 	deps = [
 		":nudny-baseline",
 		"@googletest//:gtest_main",
+		"@nlohmann_json//:json",
 	],
 )
 
 cc_binary(
 	name = "app",
 	srcs = [ "src/main.cpp"	],
-	deps = [ ":nudny-baseline"],
+	deps = [ 
+		":nudny-baseline",
+		"@nlohmann_json//:json"
+	],
 )
