@@ -1,11 +1,12 @@
 
 cc_library(
-	name = "nudny-baseline",
+	name = "nudny-window",
 	srcs = [
-		"src/base/base.cpp",
+		"src/nudny/window.cpp",
 	],
 	hdrs = [
-		"include/nudny/base.hpp",
+		"include/nudny/window.hpp",
+		"include/nudny/window/sfml.hpp",
 	],
 	includes = [
 		"include",
@@ -19,19 +20,15 @@ cc_library(
 )
 
 cc_test(
-	name = "nudny-baseline-test",
+	name = "nudny-window-test",
 	includes = ["test/include"],
-	srcs = glob([
-		"test/include/nudny_base_test.hpp",
-		"test/src/nudny_base_test.cpp"
-	]),
 	copts = [
 		"-Wall",
 		"-Wextra",
 		"-Wpedantic",
 	],
 	deps = [
-		":nudny-baseline",
+		":nudny-window",
 		"@googletest//:gtest_main",
 		"@nlohmann_json//:json",
 	],
@@ -41,7 +38,7 @@ cc_binary(
 	name = "app",
 	srcs = [ "src/main.cpp"	],
 	deps = [ 
-		":nudny-baseline",
+		":nudny-window",
 		"@nlohmann_json//:json"
 	],
 )

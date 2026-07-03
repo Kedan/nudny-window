@@ -1,5 +1,7 @@
 # pragma once
 
+#include <string>
+
 namespace nd::wnd {
 	class Window {
 		public:
