@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-MOD_NAME=nudny-baseline-test
+MOD_NAME=nudny-window-test
 
 set -euo pipefail
 
